@@ -4,7 +4,7 @@ const Post = require(MODEL_PATH + "post");
 // router from express
 const router = express.Router();
 
-//GET posts route
+//GET posts
 router.get("/", (req, res, next) => {
   Post.find()
     .then(result => {
@@ -13,7 +13,7 @@ router.get("/", (req, res, next) => {
     .catch(err => console.log(err));
 });
 
-//Get single post route
+//Get single post
 router.get("/:id", (req, res, next) => {
   Post.findById(req.params.id)
     .then(result => {
